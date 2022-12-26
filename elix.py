@@ -1,7 +1,7 @@
 import pyttsx3
 import speech_recognition as sr
 import datetime
-
+import wikipedia
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
@@ -51,5 +51,15 @@ def inputcommand(): #It will take input or listen from the user's microphone and
         
 if __name__=="__main__":
     greeting()
-    inputcommand()
-    #speak("Hello Pritam. My name is Elie. How may I help you?") 
+    
+    while True:
+        query = inputcommand().lower()  
+    
+    #logics for executing the different tasks
+        if 'wikipedia' in query:
+            speak('Searching wikipedia.......')
+            query=query.replace("wikipedia","")
+            results = wikipedia.summary(query,sentences=2)
+            speak("According to wikipedia")
+            speak(results)
+    
