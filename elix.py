@@ -32,6 +32,7 @@ def greeting():
     
 def inputcommand(): #It will take input or listen from the user's microphone and return string output
     
+    query=''
     r=sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening..... Please say something")
@@ -46,7 +47,7 @@ def inputcommand(): #It will take input or listen from the user's microphone and
     except Exception as e:
         #print(e)
         print("It was not you, it was me..... Please say that again.")
-        return "None"
+
     
     return query
         
@@ -78,8 +79,24 @@ if __name__=="__main__":
             except Exception as e:
                 print("Sorry, I am not able to search this.")
              
-        elif 'open youtube' in query:
-            webbrowser.open("youtube.com")
+        elif 'search youtube' or 'search on youtube' or 'youtube search' or ( 'open' and 'on youtube') in query:
+            query=query.replace("search youtube","")
+            query=query.replace("search on youtube","")
+            query=query.replace("youtube search","")
+            query=query.replace("open","")
+            query=query.replace("on youtube","")
+            if len(query)==0:
+                speak("please say again.")
+            else:
+                
+                try:
+                    speak("searching on youtube.")
+                    youtube = 'https://www.youtube.com/results?search_query=' + query
+                    webbrowser.open(youtube)
+                    query=''
+                except Exception as e:
+                    query=''
+                    print("I didn't understand please say it again.")
         
         elif 'open stackoverflow' in query:
             webbrowser.open("stackoverflow.com")
