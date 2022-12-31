@@ -93,9 +93,7 @@ if __name__=="__main__":
                     speak("searching on youtube.")
                     youtube = 'https://www.youtube.com/results?search_query=' + query
                     webbrowser.open(youtube)
-                    query=''
                 except Exception as e:
-                    query=''
                     print("I didn't understand please say it again.")
         
         elif 'open stackoverflow' in query:
