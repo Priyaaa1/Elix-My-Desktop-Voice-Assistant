@@ -79,12 +79,12 @@ if __name__=="__main__":
             except Exception as e:
                 print("Sorry, I am not able to search this.")
              
-        elif 'search youtube' or 'search on youtube' or 'youtube search' or ( 'open' and 'on youtube') in query:
+        elif 'search youtube' in query:
             query=query.replace("search youtube","")
-            query=query.replace("search on youtube","")
-            query=query.replace("youtube search","")
-            query=query.replace("open","")
-            query=query.replace("on youtube","")
+            # query=query.replace("search on youtube","")
+            # query=query.replace("youtube search","")
+            # query=query.replace("open","")
+            # query=query.replace("on youtube","")
             if len(query)==0:
                 speak("please say again.")
             else:
