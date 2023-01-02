@@ -8,7 +8,6 @@ import pywhatkit
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
-#print(voices[0].id)
 engine.setProperty('voice',voices[0].id) 
 
 
@@ -81,10 +80,6 @@ if __name__=="__main__":
              
         elif 'search youtube' in query:
             query=query.replace("search youtube","")
-            # query=query.replace("search on youtube","")
-            # query=query.replace("youtube search","")
-            # query=query.replace("open","")
-            # query=query.replace("on youtube","")
             if len(query)==0:
                 speak("please say again.")
             else:
