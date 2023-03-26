@@ -25,7 +25,7 @@ def greeting():
     else:
         speak("Good evening")
     
-    speak("Hope you are good. My name is Elix, I am a voice assistant developed by Pritam Singh. Please tell me How may I help you ?")
+    speak("Hope you are good. My name is Elix, I am a voice assistant developed by Pritam Singh, Preksha Singh and Priya Maheshwari. Please tell me How may I help you ?")
     
     
     
