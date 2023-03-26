@@ -69,7 +69,7 @@ if __name__=="__main__":
         elif 'search google' or 'search on google' in query :
             speak("What to search ?")
             s_query=inputcommand().lower()
-            s_query = s_query.replace("search google", "")
+            s_query = s_query.replace("search google", "") 
             
             try :
                 pywhatkit.search(s_query)
